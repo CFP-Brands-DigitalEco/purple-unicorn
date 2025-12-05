@@ -24,52 +24,52 @@ export function NavBar() {
   };
 
   const getNavItemClasses = (path: string) => {
-    const base = 'inline-flex items-center rounded-full px-4 py-2 font-medium transition-all duration-200';
+    const base = 'inline-flex items-center rounded-lg px-4 py-2 font-medium transition-all duration-200';
     if (isActive(path)) {
-      return `${base} bg-purple-100 text-purple-700 font-semibold`;
+      return `${base} bg-white text-[#4f2170] font-semibold shadow-sm`;
     }
-    return `${base} text-gray-700 hover:bg-purple-50 hover:text-purple-600`;
+    return `${base} text-slate-700 hover:bg-white hover:text-[#4f2170]`;
   };
 
   const getDropdownButtonClasses = (isOpen: boolean, menuPath: string) => {
-    const base = 'inline-flex items-center rounded-full px-4 py-2 font-medium transition-all duration-200';
+    const base = 'inline-flex items-center rounded-lg px-4 py-2 font-medium transition-all duration-200';
     if (isActive(menuPath)) {
-      return `${base} bg-purple-100 text-purple-700 font-semibold`;
+      return `${base} bg-white text-[#4f2170] font-semibold shadow-sm`;
     }
     if (isOpen) {
-      return `${base} bg-purple-50 text-purple-600`;
+      return `${base} bg-white text-[#4f2170]`;
     }
-    return `${base} text-gray-700 hover:bg-purple-50 hover:text-purple-600`;
+    return `${base} text-slate-700 hover:bg-white hover:text-[#4f2170]`;
   };
 
   return (
-    <nav className="bg-purple-50 border-b border-purple-100">
+    <nav className="bg-[#f5f5f7] border-b border-slate-200">
       {/* Desktop Layout */}
       <div className="hidden md:block">
         {/* Logo and Tagline Section */}
-        <div className="py-6 border-b border-purple-100">
-          <Container>
+        <div className="py-3 border-b border-slate-200">
+          <div className="mx-auto w-full max-w-[90rem] px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col items-center">
               <Link href="/" className="mb-2">
                 <Image
                   src="/brand/purpleuni-logo.webp"
                   alt="Purple Unicorn"
-                  width={200}
-                  height={60}
+                  width={280}
+                  height={84}
                   priority
                   className="h-auto w-auto"
                 />
               </Link>
-              <p className="text-purple-700 text-sm font-medium italic">
+              <p className="text-[#4f2170] text-base font-semibold italic ml-3">
                 A Candidate So Rare, They&apos;re Almost Mythical
               </p>
             </div>
-          </Container>
+          </div>
         </div>
 
         {/* Navigation Links Section */}
-        <div className="py-4">
-          <Container>
+        <div className="py-2">
+          <div className="mx-auto w-full max-w-[90rem] px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between">
               {/* Centered Nav Links */}
               <div className="flex-1 flex items-center justify-center gap-2">
@@ -146,7 +146,7 @@ export function NavBar() {
                   href="https://purple-unicorn.breezy.hr"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center rounded-full px-4 py-2 text-purple-600 font-bold hover:bg-purple-100 hover:text-purple-700 hover:shadow-sm transition-all duration-200"
+                  className="inline-flex items-center rounded-lg px-4 py-2 text-[#4f2170] font-bold hover:bg-white transition-all duration-200"
                 >
                   HOT JOBS!
                 </a>
@@ -233,30 +233,34 @@ export function NavBar() {
                 </Button>
               </div>
             </div>
-          </Container>
+          </div>
         </div>
       </div>
 
       {/* Mobile Layout */}
       <div className="md:hidden">
         <Container>
+          {/* Logo and Hamburger Row */}
           <div className="flex items-center justify-between py-4">
-            {/* Logo */}
-            <Link href="/">
+            {/* Logo with Tagline */}
+            <Link href="/" className="flex flex-col">
               <Image
                 src="/brand/purpleuni-logo.webp"
                 alt="Purple Unicorn"
-                width={120}
-                height={40}
+                width={160}
+                height={48}
                 priority
-                className="h-auto w-auto"
+                className="h-auto w-auto mb-1"
               />
+              <p className="text-[#4f2170] text-[10px] font-medium italic leading-tight">
+                A Candidate So Rare, They&apos;re Almost Mythical
+              </p>
             </Link>
 
             {/* Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-gray-700 hover:text-purple-600 focus:outline-none rounded-lg hover:bg-purple-50 transition-colors"
+              className="p-2 text-slate-700 hover:text-[#4f2170] focus:outline-none rounded-lg hover:bg-white transition-colors flex-shrink-0"
               aria-label="Toggle menu"
               aria-expanded={mobileMenuOpen}
             >

@@ -18,11 +18,11 @@ export function Button({
   onClick,
   type = 'button',
 }: ButtonProps) {
-  const baseClasses = 'inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold transition-all duration-200';
+  const baseClasses = 'inline-flex items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200';
 
   const variantClasses = {
-    primary: 'bg-purple-600 text-white hover:bg-purple-700 active:bg-purple-800',
-    secondary: 'bg-transparent border-2 border-purple-600 text-purple-600 hover:bg-purple-50 active:bg-purple-100',
+    primary: 'bg-[#4f2170] text-white hover:bg-[#3d1958] hover:shadow-sm hover:scale-105',
+    secondary: 'bg-transparent border-2 border-[#4f2170] text-[#4f2170] hover:bg-purple-50',
   };
 
   const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${className}`;
