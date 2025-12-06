@@ -141,15 +141,10 @@ export function NavBar() {
                   Candidates
                 </Link>
 
-                {/* HOT JOBS! - External Link */}
-                <a
-                  href="https://purple-unicorn.breezy.hr"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center rounded-lg px-4 py-2 text-[#4f2170] font-bold hover:bg-white transition-all duration-200"
-                >
+                {/* HOT JOBS! - Internal Link */}
+                <Link href="/jobs" className={`${getNavItemClasses('/jobs')} font-bold`}>
                   HOT JOBS!
-                </a>
+                </Link>
 
                 {/* Success Stories */}
                 <Link href="/success-stories" className={getNavItemClasses('/success-stories')}>
@@ -342,15 +337,15 @@ export function NavBar() {
                 </Link>
 
                 {/* HOT JOBS! */}
-                <a
-                  href="https://purple-unicorn.breezy.hr"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-purple-600 font-bold rounded-lg px-4 py-3 hover:bg-purple-50 hover:text-purple-700 transition-colors"
+                <Link
+                  href="/jobs"
+                  className={`${
+                    isActive('/jobs') ? 'bg-purple-100 text-purple-700 font-bold' : 'text-purple-600 font-bold'
+                  } rounded-lg px-4 py-3 hover:bg-purple-50 hover:text-purple-700 transition-colors`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   HOT JOBS!
-                </a>
+                </Link>
 
                 {/* Success Stories */}
                 <Link
