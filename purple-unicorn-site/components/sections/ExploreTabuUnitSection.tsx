@@ -7,7 +7,7 @@ export function ExploreTabuUnitSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#4f2170] mb-4">
-            Explore Our TABU + UNIt in a Box Solutions
+            Explore our Talent Acquisition and HR Solutions
           </h2>
           <p className="text-xl text-slate-700 max-w-3xl mx-auto">
             Embedded recruitment and HR that scale with your team, culture, and mission.
@@ -16,7 +16,7 @@ export function ExploreTabuUnitSection() {
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* TABU Card */}
+          {/* Talent Acquisition Card */}
           <div className="bg-white border border-slate-200 rounded-xl p-8 flex flex-col h-full shadow-sm">
             {/* Header with Icon */}
             <div className="flex items-start gap-3 mb-6">
@@ -25,7 +25,7 @@ export function ExploreTabuUnitSection() {
               </div>
               <div>
                 <h3 className="font-bold text-lg text-slate-900 leading-tight">
-                  TABU: Talent Acquisition Business Unit
+                  Talent Acquisition Solutions
                 </h3>
                 <p className="text-sm text-[#4f2170] font-semibold mt-1">
                   Embedded Recruitment for High-Growth Teams
@@ -35,7 +35,7 @@ export function ExploreTabuUnitSection() {
 
             {/* Strategic Description */}
             <p className="text-base text-slate-800 leading-relaxed mb-6">
-              TABU functions as your in-house recruiting team — without the overhead. We partner with your leadership to understand the business, develop candidate pipeline, and create sourcing strategies that attract the right talent. Whether you're growing headcount fast or hiring for key leadership roles, TABU delivers a recruitment engine that evolves with your business.
+              Functions as your in-house recruiting team — without the overhead. We partner with your leadership to understand the business, develop candidate pipeline, and create sourcing strategies that attract the right talent. Whether you're growing headcount fast or hiring for key leadership roles, we deliver a recruitment engine that evolves with your business.
             </p>
 
             {/* Features List */}
@@ -63,7 +63,7 @@ export function ExploreTabuUnitSection() {
             </ul>
           </div>
 
-          {/* UNIt in a Box Card */}
+          {/* HR Solutions Card */}
           <div className="bg-white border border-slate-200 rounded-xl p-8 flex flex-col h-full shadow-sm">
             {/* Header with Icon */}
             <div className="flex items-start gap-3 mb-6">
@@ -72,7 +72,7 @@ export function ExploreTabuUnitSection() {
               </div>
               <div>
                 <h3 className="font-bold text-lg text-slate-900 leading-tight">
-                  UNIt in a Box: Outsourced HR
+                  HR Solutions
                 </h3>
                 <p className="text-sm text-[#7e22ce] font-semibold mt-1">
                   On-Demand HR Built for Scale
@@ -82,7 +82,7 @@ export function ExploreTabuUnitSection() {
 
             {/* Strategic Description */}
             <p className="text-base text-slate-800 leading-relaxed mb-6">
-              UNit in a Box is your embedded HR business unit. We handle the full employee lifecycle from onboarding and compliance to culture design and team development. You get senior HR strategy without the headcount, complexity, or cost of building it in-house.
+              Your embedded HR business unit. We handle the full employee lifecycle from onboarding and compliance to culture design and team development. You get senior HR strategy without the headcount, complexity, or cost of building it in-house.
             </p>
 
             {/* Features List */}

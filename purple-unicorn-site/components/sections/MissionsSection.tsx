@@ -27,19 +27,19 @@ export function MissionsSection() {
 
         {/* Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* Card 1 - HR Services */}
+          {/* Card 1 - Talent Acquisition */}
           <div className="bg-white border border-slate-200 rounded-xl p-8 shadow-sm h-full flex flex-col">
             <div className="flex items-center gap-4 mb-6">
               <Image
                 src="/icons/hr-services-unit.webp"
-                alt="HR Services"
+                alt="Talent Acquisition"
                 width={56}
                 height={56}
                 className="w-14 h-14"
               />
               <div>
                 <h3 className="text-2xl font-bold text-[#4f2170]">
-                  HR Services (UNIt in a Box)
+                  Talent Acquisition
                 </h3>
                 <p className="text-slate-600 font-semibold mt-1">
                   Scalable and proven HR infrastructure without the overhead.
@@ -71,7 +71,7 @@ export function MissionsSection() {
             </ul>
 
             <Link
-              href="/b2b-services/hr-consultancy"
+              href="/b2b-services/talent-acquisition"
               className="text-[#4f2170] hover:text-[#3d1958] font-semibold inline-flex items-center gap-2"
             >
               Learn More
@@ -79,19 +79,19 @@ export function MissionsSection() {
             </Link>
           </div>
 
-          {/* Card 2 - Strategic Recruiting */}
+          {/* Card 2 - HR Consultancy */}
           <div className="bg-white border border-slate-200 rounded-xl p-8 shadow-sm h-full flex flex-col">
             <div className="flex items-center gap-4 mb-6">
               <Image
                 src="/icons/TABU.webp"
-                alt="Strategic Recruiting"
+                alt="HR Consultancy"
                 width={56}
                 height={56}
                 className="w-14 h-14"
               />
               <div>
                 <h3 className="text-2xl font-bold text-[#4f2170]">
-                  Strategic Recruiting & Talent Acquisition (TABU)
+                  HR Consultancy
                 </h3>
                 <p className="text-slate-600 font-semibold mt-1">
                   Embedded, Fungible Recruiting Team
@@ -123,7 +123,7 @@ export function MissionsSection() {
             </ul>
 
             <Link
-              href="/b2b-services/talent-acquisition"
+              href="/b2b-services/hr-consultancy"
               className="text-[#4f2170] hover:text-[#3d1958] font-semibold inline-flex items-center gap-2"
             >
               Learn More

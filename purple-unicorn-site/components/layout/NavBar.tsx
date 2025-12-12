@@ -7,13 +7,12 @@ import { usePathname } from 'next/navigation';
 import { Container } from './Container';
 import { Button } from '../ui/Button';
 
-type OpenMenu = 'b2b' | 'signin' | null;
+type OpenMenu = 'signin' | null;
 
 export function NavBar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<OpenMenu>(null);
-  const [mobileB2BOpen, setMobileB2BOpen] = useState(false);
   const [mobileSignInOpen, setMobileSignInOpen] = useState(false);
 
   const isActive = (path: string) => {
@@ -78,78 +77,35 @@ export function NavBar() {
                   Home
                 </Link>
 
-                {/* B2B Services Dropdown */}
-                <div
-                  className="relative"
-                  onMouseEnter={() => setOpenMenu('b2b')}
-                  onMouseLeave={() => setOpenMenu(null)}
-                >
-                  <button
-                    className={getDropdownButtonClasses(openMenu === 'b2b', '/b2b-services')}
-                    aria-haspopup="true"
-                    aria-expanded={openMenu === 'b2b'}
-                    onFocus={() => setOpenMenu('b2b')}
-                    onBlur={(e) => {
-                      if (!e.currentTarget.parentElement?.contains(e.relatedTarget)) {
-                        setOpenMenu(null);
-                      }
-                    }}
-                  >
-                    B2B Services
-                    <svg
-                      className={`ml-1 h-4 w-4 transition-transform ${openMenu === 'b2b' ? 'rotate-180' : ''}`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
+                {/* Talent Acquisition */}
+                <Link href="/b2b-services/talent-acquisition" className={getNavItemClasses('/b2b-services/talent-acquisition')}>
+                  Talent Acquisition
+                </Link>
 
-                  {openMenu === 'b2b' && (
-                    <div className="absolute top-full left-0 pt-2 z-50">
-                      <div className="min-w-[220px] rounded-lg bg-white shadow-lg border border-purple-100 py-2">
-                        <Link
-                          href="/b2b-services/talent-acquisition"
-                          className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors"
-                          onBlur={(e) => {
-                            if (!e.currentTarget.parentElement?.parentElement?.parentElement?.contains(e.relatedTarget)) {
-                              setOpenMenu(null);
-                            }
-                          }}
-                        >
-                          Talent Acquisition
-                        </Link>
-                        <Link
-                          href="/b2b-services/hr-consultancy"
-                          className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors"
-                          onBlur={(e) => {
-                            if (!e.currentTarget.parentElement?.parentElement?.parentElement?.contains(e.relatedTarget)) {
-                              setOpenMenu(null);
-                            }
-                          }}
-                        >
-                          HR Consultancy
-                        </Link>
-                      </div>
-                    </div>
-                  )}
-                </div>
+                {/* HR Consultancy */}
+                <Link href="/b2b-services/hr-consultancy" className={getNavItemClasses('/b2b-services/hr-consultancy')}>
+                  HR Consultancy
+                </Link>
 
                 {/* Candidates */}
                 <Link href="/candidates" className={getNavItemClasses('/candidates')}>
                   Candidates
                 </Link>
 
-                {/* HOT JOBS! - Internal Link */}
-                <Link href="/jobs" className={`${getNavItemClasses('/jobs')} font-bold`}>
-                  HOT JOBS!
+                {/* Bootcamps */}
+                <Link href="/bootcamps" className={getNavItemClasses('/bootcamps')}>
+                  Bootcamps
                 </Link>
 
-                {/* Success Stories */}
-                <Link href="/success-stories" className={getNavItemClasses('/success-stories')}>
-                  Success Stories
-                </Link>
+                {/* HOT JOBS! - External Link */}
+                <a
+                  href="https://purple-unicorn.breezy.hr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center rounded-lg px-4 py-2 font-medium text-slate-700 hover:bg-white hover:text-[#4f2170] transition-all duration-200"
+                >
+                  HOT JOBS!
+                </a>
 
                 {/* Sign In Dropdown */}
                 <div
@@ -182,28 +138,6 @@ export function NavBar() {
                   {openMenu === 'signin' && (
                     <div className="absolute top-full left-0 pt-2 z-50">
                       <div className="min-w-60 rounded-lg bg-white shadow-lg border border-purple-100 py-2">
-                        <Link
-                          href="/sign-in/membership"
-                          className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors"
-                          onBlur={(e) => {
-                            if (!e.currentTarget.parentElement?.parentElement?.parentElement?.contains(e.relatedTarget)) {
-                              setOpenMenu(null);
-                            }
-                          }}
-                        >
-                          Membership Login
-                        </Link>
-                        <Link
-                          href="/sign-in/student-ambassador"
-                          className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors"
-                          onBlur={(e) => {
-                            if (!e.currentTarget.parentElement?.parentElement?.parentElement?.contains(e.relatedTarget)) {
-                              setOpenMenu(null);
-                            }
-                          }}
-                        >
-                          Student Ambassador Login
-                        </Link>
                         <Link
                           href="/sign-in/payment"
                           className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors"
@@ -286,44 +220,27 @@ export function NavBar() {
                   Home
                 </Link>
 
-                {/* B2B Services Accordion */}
-                <div>
-                  <button
-                    onClick={() => setMobileB2BOpen(!mobileB2BOpen)}
-                    className={`${
-                      isActive('/b2b-services') ? 'bg-purple-100 text-purple-700 font-semibold' : 'text-gray-700'
-                    } w-full flex items-center justify-between rounded-lg px-4 py-3 hover:bg-purple-50 hover:text-purple-600 transition-colors`}
-                    aria-expanded={mobileB2BOpen}
-                  >
-                    B2B Services
-                    <svg
-                      className={`h-4 w-4 transition-transform ${mobileB2BOpen ? 'rotate-180' : ''}`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  {mobileB2BOpen && (
-                    <div className="ml-4 mt-1 flex flex-col gap-1">
-                      <Link
-                        href="/b2b-services/talent-acquisition"
-                        className="rounded-lg px-4 py-2 text-gray-600 hover:bg-purple-50 hover:text-purple-600 transition-colors"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        Talent Acquisition
-                      </Link>
-                      <Link
-                        href="/b2b-services/hr-consultancy"
-                        className="rounded-lg px-4 py-2 text-gray-600 hover:bg-purple-50 hover:text-purple-600 transition-colors"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        HR Consultancy
-                      </Link>
-                    </div>
-                  )}
-                </div>
+                {/* Talent Acquisition */}
+                <Link
+                  href="/b2b-services/talent-acquisition"
+                  className={`${
+                    isActive('/b2b-services/talent-acquisition') ? 'bg-purple-100 text-purple-700 font-semibold' : 'text-gray-700'
+                  } rounded-lg px-4 py-3 hover:bg-purple-50 hover:text-purple-600 transition-colors`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Talent Acquisition
+                </Link>
+
+                {/* HR Consultancy */}
+                <Link
+                  href="/b2b-services/hr-consultancy"
+                  className={`${
+                    isActive('/b2b-services/hr-consultancy') ? 'bg-purple-100 text-purple-700 font-semibold' : 'text-gray-700'
+                  } rounded-lg px-4 py-3 hover:bg-purple-50 hover:text-purple-600 transition-colors`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  HR Consultancy
+                </Link>
 
                 {/* Candidates */}
                 <Link
@@ -336,27 +253,27 @@ export function NavBar() {
                   Candidates
                 </Link>
 
-                {/* HOT JOBS! */}
+                {/* Bootcamps */}
                 <Link
-                  href="/jobs"
+                  href="/bootcamps"
                   className={`${
-                    isActive('/jobs') ? 'bg-purple-100 text-purple-700 font-bold' : 'text-purple-600 font-bold'
-                  } rounded-lg px-4 py-3 hover:bg-purple-50 hover:text-purple-700 transition-colors`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  HOT JOBS!
-                </Link>
-
-                {/* Success Stories */}
-                <Link
-                  href="/success-stories"
-                  className={`${
-                    isActive('/success-stories') ? 'bg-purple-100 text-purple-700 font-semibold' : 'text-gray-700'
+                    isActive('/bootcamps') ? 'bg-purple-100 text-purple-700 font-semibold' : 'text-gray-700'
                   } rounded-lg px-4 py-3 hover:bg-purple-50 hover:text-purple-600 transition-colors`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Success Stories
+                  Bootcamps
                 </Link>
+
+                {/* HOT JOBS! */}
+                <a
+                  href="https://purple-unicorn.breezy.hr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-700 rounded-lg px-4 py-3 hover:bg-purple-50 hover:text-purple-600 transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  HOT JOBS!
+                </a>
 
                 {/* Sign In Accordion */}
                 <div>
@@ -379,20 +296,6 @@ export function NavBar() {
                   </button>
                   {mobileSignInOpen && (
                     <div className="ml-4 mt-1 flex flex-col gap-1">
-                      <Link
-                        href="/sign-in/membership"
-                        className="rounded-lg px-4 py-2 text-gray-600 hover:bg-purple-50 hover:text-purple-600 transition-colors"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        Membership Login
-                      </Link>
-                      <Link
-                        href="/sign-in/student-ambassador"
-                        className="rounded-lg px-4 py-2 text-gray-600 hover:bg-purple-50 hover:text-purple-600 transition-colors"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        Student Ambassador Login
-                      </Link>
                       <Link
                         href="/sign-in/payment"
                         className="rounded-lg px-4 py-2 text-gray-600 hover:bg-purple-50 hover:text-purple-600 transition-colors"
