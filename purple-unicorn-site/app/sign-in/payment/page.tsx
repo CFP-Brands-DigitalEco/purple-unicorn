@@ -1,3 +1,5 @@
+'use client';
+
 import Script from 'next/script';
 import { Container } from '@/components/layout/Container';
 
@@ -7,11 +9,13 @@ export default function PaymentLoginPage() {
       {/* Load Payra Client Portal Script */}
       <Script
         src="https://app.payra.com/client_portal.js"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
+        onLoad={() => {
+          if (typeof window !== 'undefined' && (window as any).clientPortal) {
+            (window as any).clientPortal.init('7UJ6X');
+          }
+        }}
       />
-      <Script id="payra-init" strategy="afterInteractive">
-        {`window.clientPortal.init('7UJ6X');`}
-      </Script>
 
       <div className="min-h-screen bg-[#f5f5f7] py-12">
         <Container>
