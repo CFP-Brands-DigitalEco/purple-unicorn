@@ -108,20 +108,30 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 ## Development Notes
 
-- The job board currently uses mock data from `lib/mockJobs.ts`
-- The navigation has been updated to link to the internal `/jobs` page (previously linked to external Breezy HR)
 - All components follow the existing design system with Purple Unicorn branding
-- Ready for future CRM and database integration
+- Job listings route to external Breezy HR tool (https://purple-unicorn.breezy.hr/)
+
+## Recent Updates
+
+### Latest Release
+- ✅ **Testimonials Page** - Filterable client success stories with 2-group filtering system
+- ✅ **SEO Optimization** - Comprehensive metadata across all pages with Open Graph support
+- ✅ **Favicon** - Custom Purple Unicorn branding icon
+- ✅ **Bootcamp Updates** - Updated session dates and information
+
+### Architecture
+- Built with Next.js 16.0.7 App Router
+- Server and Client Component separation for optimal performance
+- TypeScript for type safety
+- Responsive design with Tailwind CSS 4
 
 ## Future Enhancements
 
 - Database integration (PostgreSQL + Prisma recommended)
-- API endpoints for job CRUD operations
-- Admin dashboard for job management
-- Employee CRM for internal job posting
 - Authentication and authorization
 - Candidate application tracking
 - Email notifications
+- Enhanced analytics and reporting
 
 ## Learn More
 

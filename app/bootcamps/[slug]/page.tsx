@@ -26,14 +26,14 @@ export async function generateMetadata({ params }: BootcampDetailPageProps): Pro
   }
 
   return {
-    title: `${bootcamp.title} | Purple Unicorn`,
+    title: `${bootcamp.name} | Purple Unicorn`,
     description: bootcamp.description,
-    keywords: ["career bootcamp", "career coaching", bootcamp.title, "professional development"],
+    keywords: ["career bootcamp", "career coaching", bootcamp.name, "professional development"],
     alternates: {
       canonical: `/bootcamps/${slug}`,
     },
     openGraph: {
-      title: `${bootcamp.title} | Purple Unicorn`,
+      title: `${bootcamp.name} | Purple Unicorn`,
       description: bootcamp.description,
       url: `https://purpluni.com/bootcamps/${slug}`,
       type: 'website',
