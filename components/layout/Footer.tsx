@@ -12,6 +12,7 @@ export function Footer() {
           src="/images/footer-background.webp"
           alt=""
           fill
+          loading="eager"
           className="object-cover opacity-40"
           sizes="100vw"
         />
