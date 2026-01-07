@@ -9,7 +9,7 @@ export function Footer() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/footer-background.jpeg"
+          src="/images/footer-background.webp"
           alt=""
           fill
           className="object-cover opacity-40"
