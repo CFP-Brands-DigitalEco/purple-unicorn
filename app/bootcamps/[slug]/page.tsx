@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { bootcamps } from '@/lib/bootcamps';
 import { BootcampDetailClient } from './BootcampDetailClient';
@@ -12,6 +13,32 @@ interface BootcampDetailPageProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateMetadata({ params }: BootcampDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const bootcamp = bootcamps.find((b) => b.slug === slug);
+
+  if (!bootcamp) {
+    return {
+      title: 'Bootcamp Not Found | Purple Unicorn',
+    };
+  }
+
+  return {
+    title: `${bootcamp.title} | Purple Unicorn`,
+    description: bootcamp.description,
+    keywords: ["career bootcamp", "career coaching", bootcamp.title, "professional development"],
+    alternates: {
+      canonical: `/bootcamps/${slug}`,
+    },
+    openGraph: {
+      title: `${bootcamp.title} | Purple Unicorn`,
+      description: bootcamp.description,
+      url: `https://purpluni.com/bootcamps/${slug}`,
+      type: 'website',
+    },
+  };
 }
 
 export default async function BootcampDetailPage({ params }: BootcampDetailPageProps) {

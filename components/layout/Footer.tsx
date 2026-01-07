@@ -64,6 +64,14 @@ export function Footer() {
                     HR Services
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/testimonials"
+                    className="text-gray-300 hover:text-purple-400 transition-colors"
+                  >
+                    Testimonials
+                  </Link>
+                </li>
               </ul>
             </div>
 

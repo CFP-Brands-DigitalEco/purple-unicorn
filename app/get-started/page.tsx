@@ -1,4 +1,20 @@
+import type { Metadata } from 'next';
 import { Container } from '@/components/layout/Container';
+
+export const metadata: Metadata = {
+  title: "Get Started | Purple Unicorn",
+  description: "Ready to transform your career or build your dream team? Get started with Purple Unicorn's full-cycle talent solutions today.",
+  keywords: ["get started", "career coaching", "talent acquisition", "hr consulting", "contact purple unicorn"],
+  alternates: {
+    canonical: '/get-started',
+  },
+  openGraph: {
+    title: "Get Started | Purple Unicorn",
+    description: "Ready to transform your career or build your dream team? Get started with Purple Unicorn today",
+    url: 'https://purpluni.com/get-started',
+    type: 'website',
+  },
+};
 
 export default function GetStartedPage() {
   return (

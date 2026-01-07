@@ -1,9 +1,25 @@
+import type { Metadata } from 'next';
 import { TalentHeroSection } from '@/components/sections/TalentHeroSection';
 import { ExploreTabuUnitSection } from '@/components/sections/ExploreTabuUnitSection';
 import { ProvenMethodologySection } from '@/components/sections/ProvenMethodologySection';
 import { PeopleOpsBenefitsSection } from '@/components/sections/PeopleOpsBenefitsSection';
 import { SeamlessIntegrationSection } from '@/components/sections/SeamlessIntegrationSection';
 import { TeamMemberHighlightSection } from '@/components/sections/TeamMemberHighlightSection';
+
+export const metadata: Metadata = {
+  title: "HR Consulting Services | Purple Unicorn",
+  description: "Strategic HR consulting services to build and scale dynamic teams. Expert people operations with 20+ years of experience across high-stakes industries.",
+  keywords: ["hr consulting", "hr services", "people operations", "human resources consulting", "workforce strategy"],
+  alternates: {
+    canonical: '/b2b-services/hr-consultancy',
+  },
+  openGraph: {
+    title: "HR Consulting Services | Purple Unicorn",
+    description: "Strategic HR consulting services to build and scale dynamic teams with expert people operations",
+    url: 'https://purpluni.com/b2b-services/hr-consultancy',
+    type: 'website',
+  },
+};
 
 export default function HRConsultancyPage() {
   return (

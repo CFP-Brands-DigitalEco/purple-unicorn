@@ -97,6 +97,11 @@ export function NavBar() {
                   Bootcamps
                 </Link>
 
+                {/* Testimonials */}
+                <Link href="/testimonials" className={getNavItemClasses('/testimonials')}>
+                  Testimonials
+                </Link>
+
                 {/* HOT JOBS! - External Link */}
                 <a
                   href="https://purple-unicorn.breezy.hr/"
@@ -262,6 +267,17 @@ export function NavBar() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Bootcamps
+                </Link>
+
+                {/* Testimonials */}
+                <Link
+                  href="/testimonials"
+                  className={`${
+                    isActive('/testimonials') ? 'bg-purple-100 text-purple-700 font-semibold' : 'text-gray-700'
+                  } rounded-lg px-4 py-3 hover:bg-purple-50 hover:text-purple-600 transition-colors`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Testimonials
                 </Link>
 
                 {/* HOT JOBS! */}

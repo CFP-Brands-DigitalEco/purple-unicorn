@@ -259,16 +259,11 @@ export function BootcampDetailClient() {
               {/* Upcoming Sessions */}
               <div className="bg-slate-50 border border-slate-200 rounded-lg p-6 mb-6">
                 <h3 className="font-bold text-lg text-slate-900 mb-3">Upcoming Sessions (EST):</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-3">
-                    <span className="text-[#4f2170] font-bold shrink-0">→</span>
-                    <span className="text-slate-700">Tuesday, January 6 — 6:00–7:30pm EST</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-[#4f2170] font-bold shrink-0">→</span>
-                    <span className="text-slate-700">Wednesday, January 7 — 12:00–1:30pm EST</span>
-                  </li>
-                </ul>
+                <div className="text-center py-4">
+                  <p className="text-slate-600 text-lg">
+                    New dates coming soon! Check back for updates.
+                  </p>
+                </div>
                 <p className="text-sm text-slate-600 mt-4">
                   $199 (Winter Break Special: $149 — save $50)
                 </p>
@@ -405,8 +400,7 @@ export function BootcampDetailClient() {
                   className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4f2170] focus:border-transparent text-slate-900 bg-white"
                 >
                   <option value="">Choose a session...</option>
-                  <option value="2025-01-06-18:00">Tuesday, January 6 — 6:00–7:30pm EST</option>
-                  <option value="2025-01-07-12:00">Wednesday, January 7 — 12:00–1:30pm EST</option>
+                  <option value="coming-soon">New dates coming soon - contact us to be notified</option>
                 </select>
               </div>
 

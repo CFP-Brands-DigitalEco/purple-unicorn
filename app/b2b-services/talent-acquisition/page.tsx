@@ -1,9 +1,25 @@
+import type { Metadata } from 'next';
 import { TalentHeroSection } from '@/components/sections/TalentHeroSection';
 import { ExploreTabuUnitSection } from '@/components/sections/ExploreTabuUnitSection';
 import { ProvenMethodologySection } from '@/components/sections/ProvenMethodologySection';
 import { PeopleOpsBenefitsSection } from '@/components/sections/PeopleOpsBenefitsSection';
 import { SeamlessIntegrationSection } from '@/components/sections/SeamlessIntegrationSection';
 import { TeamMemberHighlightSection } from '@/components/sections/TeamMemberHighlightSection';
+
+export const metadata: Metadata = {
+  title: "Talent Acquisition Services | Purple Unicorn",
+  description: "Embedded talent acquisition solutions that transform hiring into a powerful engine for innovation. Expert recruitment strategy with 20+ years of experience.",
+  keywords: ["talent acquisition", "recruitment services", "executive recruiting", "hiring solutions", "embedded talent team"],
+  alternates: {
+    canonical: '/b2b-services/talent-acquisition',
+  },
+  openGraph: {
+    title: "Talent Acquisition Services | Purple Unicorn",
+    description: "Embedded talent acquisition solutions that transform hiring into a powerful engine for innovation",
+    url: 'https://purpluni.com/b2b-services/talent-acquisition',
+    type: 'website',
+  },
+};
 
 export default function TalentAcquisitionPage() {
   return (

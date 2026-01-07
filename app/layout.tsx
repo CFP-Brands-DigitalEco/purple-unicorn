@@ -17,8 +17,44 @@ const ptSans = PT_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Purple Unicorn - A Candidate So Rare, They're Almost Mythical",
-  description: "Where exceptional talent meets strategic growth. Purple Unicorn provides premier talent acquisition and HR consultancy services.",
+  title: "Purple Unicorn | Full Cycle Talent Solutions",
+  description: "We support advancing organizations and professionals of all levels to reach their maximum potential for impact",
+  keywords: ["career coaching", "hr services", "hr consulting", "talent acquisition", "recruitment", "career development"],
+  authors: [{ name: "Purple Unicorn" }],
+  metadataBase: new URL('https://purpluni.com'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: "Purple Unicorn | Full Cycle Talent Solutions",
+    description: "We support advancing organizations and professionals of all levels to reach their maximum potential for impact",
+    url: 'https://purpluni.com',
+    siteName: 'Purple Unicorn',
+    type: 'website',
+    images: [
+      {
+        url: '/images/PUE_Favicon.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Purple Unicorn - Full Cycle Talent Solutions',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Purple Unicorn | Full Cycle Talent Solutions",
+    description: "We support advancing organizations and professionals of all levels to reach their maximum potential for impact",
+    images: ['/images/PUE_Favicon.jpeg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: '/images/PUE_Favicon.jpeg',
+    shortcut: '/images/PUE_Favicon.jpeg',
+    apple: '/images/PUE_Favicon.jpeg',
+  },
 };
 
 export default function RootLayout({

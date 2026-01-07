@@ -1,6 +1,22 @@
+import type { Metadata } from 'next';
 import { Container } from '@/components/layout/Container';
 import { BootcampCard } from '@/components/bootcamps/BootcampCard';
 import { bootcamps } from '@/lib/bootcamps';
+
+export const metadata: Metadata = {
+  title: "Career Bootcamps & Programs | Purple Unicorn",
+  description: "High-impact, small-group career coaching programs led by experienced Fortune 500 talent executives. Transform uncertainty into confidence and career momentum.",
+  keywords: ["career bootcamp", "career coaching program", "professional development", "career workshops", "student career programs"],
+  alternates: {
+    canonical: '/bootcamps',
+  },
+  openGraph: {
+    title: "Career Bootcamps & Programs | Purple Unicorn",
+    description: "High-impact, small-group career coaching programs led by experienced Fortune 500 talent executives",
+    url: 'https://purpluni.com/bootcamps',
+    type: 'website',
+  },
+};
 
 export default function BootcampsPage() {
   return (
