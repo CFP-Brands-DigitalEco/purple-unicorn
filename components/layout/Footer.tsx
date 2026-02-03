@@ -12,9 +12,9 @@ export function Footer() {
           src="/images/footer-background.webp"
           alt=""
           fill
-          loading="eager"
+          loading="lazy"
           className="object-cover opacity-40"
-          sizes="100vw"
+          sizes="(max-width: 768px) 768px, (max-width: 1280px) 1280px, 1920px"
         />
       </div>
 

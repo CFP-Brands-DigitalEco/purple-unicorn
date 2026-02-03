@@ -8,7 +8,7 @@ export function FounderSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Image */}
           <div className="order-2 lg:order-1">
-            <div className="rounded-lg overflow-hidden shadow-sm">
+            <div className="rounded-lg overflow-hidden shadow-sm bg-slate-200">
               <Image
                 src="/headshots/Jenni-headshot.webp"
                 alt="Jenni Smith"
