@@ -204,4 +204,12 @@ export const testimonials: Testimonial[] = [
     quote: "I wanted to get back to you regarding the results of my internship interview. Earlier this week, I received a call from the HR recruiter at Universal, informing me that I was given an offer for the Entertainment Operations internship. I have accepted this offer for the fall semester internship with Universal and am beyond excited for this opportunity! This role was only given to one person and I feel so grateful to have been offered this position! I am so grateful for the resources and assistance that you provided me with for preparation for my previous interview for this role as I really feel they helped me prepare to be the best version of myself in the interview! I just wanted to update you with this exciting news! Thank you again so much for your help and I hope you have a great week!",
     tags: ['career-coaching', 'student', 'recent-grad'],
   },
+  {
+    id: '17',
+    name: 'Lee Cohen',
+    role: 'Partner/Owner',
+    company: 'Cohen & Newmark',
+    quote: "Purple Unicorn helped us find an exceptional bookkeeper for our law firm, and the experience exceeded our expectations. They took the time to understand our business and delivered a candidate who was not only highly skilled, but also a perfect cultural fit. The role was filled in under 45 days, and our new bookkeeper has been a stellar addition to our team. We were impressed with their process, communication, and results, and would absolutely work with Purple Unicorn again.",
+    tags: ['talent-acquisition', 'employer'],
+  },
 ];
