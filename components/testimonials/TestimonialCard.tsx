@@ -1,14 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { Testimonial, tagLabels } from '@/lib/testimonials';
+import { Testimonial } from '@/lib/testimonials';
 
-interface TestimonialCardProps {
-  testimonial: Testimonial;
-  showTags?: boolean;
-}
-
-export function TestimonialCard({ testimonial, showTags = false }: TestimonialCardProps) {
+export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const maxLength = 300;
   const shouldTruncate = testimonial.quote.length > maxLength;
@@ -18,20 +13,6 @@ export function TestimonialCard({ testimonial, showTags = false }: TestimonialCa
 
   return (
     <div className="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-lg transition-shadow">
-      {/* Optional tag badges */}
-      {showTags && testimonial.tags.length > 0 && (
-        <div className="mb-3 flex flex-wrap gap-2">
-          {testimonial.tags.map((tag) => (
-            <span
-              key={tag}
-              className="inline-block px-3 py-1 text-xs font-semibold text-[#4f2170] bg-purple-50 rounded-full"
-            >
-              {tagLabels[tag]}
-            </span>
-          ))}
-        </div>
-      )}
-
       {/* Quote icon */}
       <div className="text-[#4f2170] mb-4">
         <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
