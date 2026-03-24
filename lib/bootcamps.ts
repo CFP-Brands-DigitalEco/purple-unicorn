@@ -17,6 +17,28 @@ export interface Bootcamp {
 
 export const bootcamps: Bootcamp[] = [
   {
+    id: '2',
+    slug: 'career-kickstart',
+    name: 'Career Kickstart — 90-Minute Training',
+    tagline: 'Stop guessing. Start standing out.',
+    audience: 'College students applying to internships and full-time roles.',
+    formatSummary: 'Live online workshop, 90 minutes.',
+    duration: '90 minutes',
+    locationType: 'online',
+    priceRange: '$99',
+    description:
+      'A live 90-minute workshop where students learn how to improve their resume, strengthen their LinkedIn profile, reach out to alumni, and tell their story in interviews.',
+    highlights: [
+      'LinkedIn strategy and profile optimization',
+      'Elevator pitch essentials',
+      'Personal brand basics',
+      'Resume improvement framework',
+      'Alumni outreach strategy',
+      'Interview storytelling foundation',
+    ],
+    ctaPrimaryLabel: 'Reserve My Seat — $99',
+  },
+  {
     id: '1',
     slug: 'college-coaching-bootcamp',
     name: 'The College Coaching Bootcamp',
