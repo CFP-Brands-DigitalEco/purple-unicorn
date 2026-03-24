@@ -3,10 +3,15 @@ import { notFound } from 'next/navigation';
 import { bootcamps } from '@/lib/bootcamps';
 import { BootcampDetailClient } from './BootcampDetailClient';
 
+// Exclude slugs that have their own dedicated static page under /bootcamps/[slug-name]/
+const DEDICATED_PAGES = ['career-kickstart'];
+
 export async function generateStaticParams() {
-  return bootcamps.map((bootcamp) => ({
-    slug: bootcamp.slug,
-  }));
+  return bootcamps
+    .filter((b) => !DEDICATED_PAGES.includes(b.slug))
+    .map((bootcamp) => ({
+      slug: bootcamp.slug,
+    }));
 }
 
 interface BootcampDetailPageProps {
