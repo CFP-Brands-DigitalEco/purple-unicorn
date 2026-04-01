@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const SESSION_DATE = 'Tuesday, April 7, 2026';
 
@@ -26,6 +26,10 @@ export function CareerKickstartClient() {
   const [showPayment, setShowPayment] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const formRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (showPayment) formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [showPayment]);
 
   const scrollToForm = () => formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
@@ -71,15 +75,12 @@ export function CareerKickstartClient() {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 text-white">
-            The Four Places Most Students Lose the Job Search — and Exactly How to Win Each One.
+            Why Great Students Get Filtered Out of Jobs They Qualify For
           </h1>
 
           <div className="mb-8 max-w-2xl mx-auto">
-            <p className="text-white text-lg md:text-xl font-semibold mb-2">
-              Resume. LinkedIn. Outreach. Interviews.
-            </p>
             <p className="text-purple-200 text-lg md:text-xl leading-relaxed">
-              Learn to sell yourself and give recruiters exactly what they&apos;re looking for — in one focused session.
+              A live, 90-minute workshop highlighting what recruiters look for across resumes, LinkedIn, and networking outreach so you start getting interviews.
             </p>
           </div>
 
@@ -175,47 +176,117 @@ export function CareerKickstartClient() {
         {/* REGISTRATION FORM */}
         <section ref={formRef} id="register" className="bg-[#1a0d2e] rounded-xl p-8 scroll-mt-24">
           <div className="max-w-lg mx-auto">
+
+            {/* Step indicator */}
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <div className={`flex items-center gap-2 text-sm font-semibold ${showPayment ? 'text-green-400' : 'text-white'}`}>
+                <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${showPayment ? 'bg-green-500 text-white' : 'bg-[#6b2f96] text-white'}`}>
+                  {showPayment ? (
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  ) : '1'}
+                </span>
+                Your Info
+              </div>
+              <div className={`flex-1 h-px max-w-[60px] ${showPayment ? 'bg-green-500/60' : 'bg-white/20'}`} />
+              <div className={`flex items-center gap-2 text-sm font-semibold ${showPayment ? 'text-white' : 'text-white/40'}`}>
+                <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${showPayment ? 'bg-[#6b2f96] text-white' : 'bg-white/10 text-white/40'}`}>2</span>
+                Payment
+              </div>
+            </div>
+
             {showPayment ? (
-              <>
-                <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-2">Complete Your Registration</h2>
-                <p className="text-purple-300 text-center mb-6">Your spot is saved — complete payment below to lock it in.</p>
-                <iframe
-                  src="https://app.payra.com/7UJ6XP42G6A8/paymentLink?embed=true"
-                  frameBorder="0"
-                  width="100%"
-                  height="600"
-                  style={{ boxShadow: '0px 0px 8px 5px #999', borderRadius: '.25em' }}
-                />
-              </>
+              <div className="text-center">
+                {/* Checkmark */}
+                <div className="relative w-20 h-20 mx-auto mb-6">
+                  <div className="absolute inset-0 rounded-full bg-green-500/20 animate-ping [animation-duration:3s]" />
+                  <div className="relative w-20 h-20 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center">
+                    <svg className="w-9 h-9 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                </div>
+
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Your spot is saved!</h2>
+                <p className="text-purple-300 mb-6">Complete payment below to confirm your registration for April 7th.</p>
+
+                {/* Zoom link promise */}
+                <div className="bg-purple-900/40 border border-purple-500/30 rounded-xl p-4 mb-4 text-left flex items-start gap-3">
+                  <svg className="w-5 h-5 text-purple-300 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <p className="text-purple-200 text-sm leading-relaxed">
+                    Once payment is confirmed, your <strong className="text-white">Zoom session link</strong> will be sent to you by email on the day of the workshop.
+                  </p>
+                </div>
+
+                {/* Calendar warning */}
+                <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 mb-8 text-left flex items-start gap-3">
+                  <svg className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <p className="text-amber-200 text-sm leading-relaxed">
+                    <strong className="text-amber-100">Add April 7th to your calendar now.</strong>
+                  </p>
+                </div>
+
+                {/* CTA */}
+                <div className="relative group">
+                  <div className="absolute -inset-1 rounded-2xl bg-[#6b2f96] opacity-40 blur-md group-hover:opacity-60 animate-pulse transition-opacity" />
+                  <a
+                    href="https://app.payra.com/7UJ6XP42G6A8/paymentLink"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative inline-flex w-full items-center justify-center py-5 bg-[#6b2f96] text-white font-bold text-xl rounded-xl hover:bg-[#7d38b0] transition-all duration-200 hover:scale-[1.02] shadow-2xl shadow-purple-900/60 text-center"
+                  >
+                    Continue to Payment — $99
+                  </a>
+                </div>
+
+                <p className="mt-4 text-purple-400 text-sm">
+                  Not valuable? Full refund within 24 hours. No questions asked.
+                </p>
+              </div>
             ) : (
               <>
-                <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-2">Secure Your Spot for April 7th.</h2>
-                <p className="text-purple-300 text-center mb-8">{SESSION_DATE} · Live Online · 90 Minutes</p>
-                <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+                <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-1">Secure Your Spot for April 7th</h2>
+                <p className="text-purple-400 text-sm text-center mb-8">{SESSION_DATE} · Live Online · 90 Minutes</p>
+                <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                   <div>
-                    <label className="block text-purple-200 text-sm font-semibold mb-1">Full Name <span className="text-purple-400">*</span></label>
-                    <input type="text" name="name" required value={formData.name} onChange={handleChange} placeholder="Your full name" className="w-full px-4 py-3 border border-white/20 rounded-lg bg-white/10 text-white placeholder-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400 transition-colors" />
+                    <label className="block text-purple-200 text-sm font-semibold mb-1.5">Full Name <span className="text-purple-400">*</span></label>
+                    <input type="text" name="name" required value={formData.name} onChange={handleChange} placeholder="Your full name" className="w-full px-4 py-3.5 border border-white/15 rounded-xl bg-white/8 text-white placeholder-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-400/60 focus:border-purple-400/60 focus:bg-white/12 transition-all" />
                   </div>
                   <div>
-                    <label className="block text-purple-200 text-sm font-semibold mb-1">Email Address <span className="text-purple-400">*</span></label>
-                    <input type="email" name="email" required value={formData.email} onChange={handleChange} placeholder="your@email.com" className="w-full px-4 py-3 border border-white/20 rounded-lg bg-white/10 text-white placeholder-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400 transition-colors" />
+                    <label className="block text-purple-200 text-sm font-semibold mb-1.5">Email Address <span className="text-purple-400">*</span></label>
+                    <input type="email" name="email" required value={formData.email} onChange={handleChange} placeholder="your@email.com" className="w-full px-4 py-3.5 border border-white/15 rounded-xl bg-white/8 text-white placeholder-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-400/60 focus:border-purple-400/60 focus:bg-white/12 transition-all" />
                   </div>
-                  <div>
-                    <label className="block text-purple-200 text-sm font-semibold mb-1">School <span className="text-purple-500 font-normal">(optional)</span></label>
-                    <input type="text" name="school" value={formData.school} onChange={handleChange} placeholder="University or college name" className="w-full px-4 py-3 border border-white/20 rounded-lg bg-white/10 text-white placeholder-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400 transition-colors" />
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-purple-200 text-sm font-semibold mb-1.5">School <span className="text-purple-500 font-normal text-xs">(optional)</span></label>
+                      <input type="text" name="school" value={formData.school} onChange={handleChange} placeholder="Your college" className="w-full px-4 py-3.5 border border-white/15 rounded-xl bg-white/8 text-white placeholder-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-400/60 focus:border-purple-400/60 focus:bg-white/12 transition-all" />
+                    </div>
+                    <div>
+                      <label className="block text-purple-200 text-sm font-semibold mb-1.5">Grad Year <span className="text-purple-500 font-normal text-xs">(optional)</span></label>
+                      <select name="gradYear" value={formData.gradYear} onChange={handleChange} className="w-full px-4 py-3.5 border border-white/15 rounded-xl bg-[#1a0d2e] text-white focus:outline-none focus:ring-2 focus:ring-purple-400/60 transition-all">
+                        <option value="">Year</option>
+                        {['2025','2026','2027','2028','2029'].map(y => <option key={y} value={y}>{y}</option>)}
+                      </select>
+                    </div>
                   </div>
-                  <div>
-                    <label className="block text-purple-200 text-sm font-semibold mb-1">Graduation Year <span className="text-purple-500 font-normal">(optional)</span></label>
-                    <select name="gradYear" value={formData.gradYear} onChange={handleChange} className="w-full px-4 py-3 border border-white/20 rounded-lg bg-[#1a0d2e] text-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-colors">
-                      <option value="">Select graduation year</option>
-                      {['2025','2026','2027','2028','2029'].map(y => <option key={y} value={y}>{y}</option>)}
-                    </select>
-                  </div>
-                  {submitError && <p className="text-red-300 text-sm bg-red-900/30 rounded-lg px-4 py-3">{submitError}</p>}
-                  <button type="submit" disabled={isSubmitting} className="w-full py-4 bg-[#6b2f96] text-white font-bold text-lg rounded-xl hover:bg-[#7d38b0] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed mt-2 shadow-lg">
-                    {isSubmitting ? 'Saving your spot...' : 'Reserve My Seat — $99'}
+                  {submitError && <p className="text-red-300 text-sm bg-red-900/30 rounded-xl px-4 py-3">{submitError}</p>}
+                  <button type="submit" disabled={isSubmitting} className="w-full py-4 bg-[#6b2f96] text-white font-bold text-lg rounded-xl hover:bg-[#7d38b0] hover:scale-[1.01] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 mt-1 shadow-xl shadow-purple-900/40">
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                        </svg>
+                        Saving your spot...
+                      </span>
+                    ) : 'Save My Spot & Continue →'}
                   </button>
-                  <p className="text-purple-200 text-sm text-center">
+                  <p className="text-purple-400 text-sm text-center">
                     Not valuable? Full refund within 24 hours. No questions asked.
                   </p>
                 </form>

@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { after } from 'next/server';
 
 /**
  * GOOGLE APPS SCRIPT SETUP (one-time, done by client)
@@ -76,10 +77,10 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Name and email are required' }, { status: 400 });
     }
 
-    const webhookUrl = process.env.APPS_SCRIPT_WEBHOOK_URL;
+    // TODO: move to APPS_SCRIPT_WEBHOOK_URL env var before going live
+    const webhookUrl = process.env.APPS_SCRIPT_WEBHOOK_URL ?? 'https://script.google.com/macros/s/AKfycbxjmY4f4PzZ4TR4CRp2Wl_VZUTvBZUGEp-DpzX4KmGsKQGFkv9jI8ZYRL8ppzWVMaUMJA/exec';
 
-    if (webhookUrl) {
-      // Fire-and-forget: webhook failure should not block the user from reaching payment
+    after(async () => {
       try {
         await fetch(webhookUrl, {
           method: 'POST',
@@ -95,9 +96,7 @@ export async function POST(request: Request) {
       } catch (webhookError) {
         console.error('Apps Script webhook failed:', webhookError);
       }
-    } else {
-      console.warn('APPS_SCRIPT_WEBHOOK_URL is not set — signup not logged to Google Sheet');
-    }
+    });
 
     return NextResponse.json({ success: true });
   } catch (error) {
