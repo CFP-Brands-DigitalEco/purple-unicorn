@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 
-const SESSION_DATE = 'Tuesday, April 7, 2026';
+const SESSION_DATE = 'Wednesday, April 22, 2026';
 
 interface FormData {
   name: string;
@@ -67,7 +67,7 @@ export function CareerKickstartClient() {
 
           {/* Session strip — above headline */}
           <div className="flex flex-wrap justify-center gap-2 mb-6">
-            {['April 7th', '90 Min', 'Live Online', 'Limited Seats'].map((label) => (
+            {['April 22nd', '90 Min', 'Live Online', 'Limited Seats'].map((label) => (
               <span key={label} className="inline-flex items-center text-purple-300 text-xs font-medium bg-white/5 border border-white/10 px-3 py-1.5 rounded-full whitespace-nowrap">
                 {label}
               </span>
@@ -90,9 +90,6 @@ export function CareerKickstartClient() {
           >
             Reserve My Seat — $99
           </button>
-          <p className="mt-3 text-purple-300 text-sm">
-            Not valuable? Full refund within 24 hours. No questions asked.
-          </p>
 
         </div>
       </section>
@@ -130,21 +127,21 @@ export function CareerKickstartClient() {
 
         <section className="bg-white rounded-xl shadow-sm border border-slate-200 p-8">
           <h2 className="text-2xl md:text-3xl font-bold text-[#4f2170] mb-4">Meet Your Instructors</h2>
-          <p className="text-slate-600 text-base leading-relaxed mb-8">Suzanne brings 25+ years on the hiring and talent side. Eric brings the student coaching framework. Together they cover both sides of the hiring conversation.</p>
+          <p className="text-slate-600 text-base leading-relaxed mb-8">Suzanne brings 25+ years on the hiring and talent side. Conor brings 13+ years of hands-on talent development across agency and corporate environments. Together they cover both sides of the hiring conversation.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div className="flex flex-col items-center text-center md:items-start md:text-left">
               {/*
-                TODO: Drop eric-miller.webp into /public/headshots/ and replace the
+                TODO: Drop conor-boland.webp into /public/headshots/ and replace the
                 placeholder below with:
-                  <Image src="/headshots/eric-miller.webp" alt="Eric Miller"
+                  <Image src="/headshots/conor-boland.webp" alt="Conor Boland"
                     width={96} height={96} className="rounded-full object-cover mb-4" />
               */}
               <div className="w-24 h-24 rounded-full bg-purple-100 flex items-center justify-center mb-4 shrink-0">
-                <span className="text-2xl font-bold text-[#4f2170]">EM</span>
+                <span className="text-2xl font-bold text-[#4f2170]">CB</span>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-1">Eric Miller</h3>
-              <p className="text-[#4f2170] text-sm font-semibold mb-3">Career Coach</p>
-              <p className="text-slate-700 leading-relaxed">Eric Miller is a career coach who helps students translate their strengths into internship offers. His approach focuses on clarity, practical tools, and structured preparation so students can stand out with their resume, LinkedIn profile, and interview story.</p>
+              <h3 className="text-xl font-bold text-slate-900 mb-1">Conor Boland</h3>
+              <p className="text-[#4f2170] text-sm font-semibold mb-3">Chief Talent Officer</p>
+              <p className="text-slate-700 leading-relaxed">Conor has built a reputation as a go-to advisor for evolving professionals, stemming from his 12+ years of experience in talent identification and career advancement. Known for his roll-up-your-sleeves immersive style, he has impacted the talent caliber at companies like Ford, Amazon, Chewy, and Hitachi.</p>
             </div>
             <div className="flex flex-col items-center text-center md:items-start md:text-left">
               {/*
@@ -209,7 +206,7 @@ export function CareerKickstartClient() {
                 </div>
 
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Your spot is saved!</h2>
-                <p className="text-purple-300 mb-6">Complete payment below to confirm your registration for April 7th.</p>
+                <p className="text-purple-300 mb-6">Complete payment below to confirm your registration for April 22nd.</p>
 
                 {/* Zoom link promise */}
                 <div className="bg-purple-900/40 border border-purple-500/30 rounded-xl p-4 mb-4 text-left flex items-start gap-3">
@@ -227,7 +224,7 @@ export function CareerKickstartClient() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                   <p className="text-amber-200 text-sm leading-relaxed">
-                    <strong className="text-amber-100">Add April 7th to your calendar now.</strong>
+                    <strong className="text-amber-100">Add April 22nd to your calendar now.</strong>
                   </p>
                 </div>
 
@@ -244,13 +241,10 @@ export function CareerKickstartClient() {
                   </a>
                 </div>
 
-                <p className="mt-4 text-purple-400 text-sm">
-                  Not valuable? Full refund within 24 hours. No questions asked.
-                </p>
               </div>
             ) : (
               <>
-                <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-1">Secure Your Spot for April 7th</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-1">Secure Your Spot for April 22nd</h2>
                 <p className="text-purple-400 text-sm text-center mb-8">{SESSION_DATE} · Live Online · 90 Minutes</p>
                 <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                   <div>
@@ -286,9 +280,6 @@ export function CareerKickstartClient() {
                       </span>
                     ) : 'Save My Spot & Continue →'}
                   </button>
-                  <p className="text-purple-400 text-sm text-center">
-                    Not valuable? Full refund within 24 hours. No questions asked.
-                  </p>
                 </form>
               </>
             )}
