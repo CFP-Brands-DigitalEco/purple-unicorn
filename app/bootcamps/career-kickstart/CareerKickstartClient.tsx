@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 
-const SESSION_DATE = 'Wednesday, April 22, 2026';
+const SESSION_DATE = 'Wednesday, April 22, 2026 · 5p ET / 2p PT';
 
 interface FormData {
   name: string;
@@ -67,7 +67,7 @@ export function CareerKickstartClient() {
 
           {/* Session strip — above headline */}
           <div className="flex flex-wrap justify-center gap-2 mb-6">
-            {['April 22nd', '90 Min', 'Live Online', 'Limited Seats'].map((label) => (
+            {['April 22nd · 5p ET / 2p PT', '90 Min', 'Live Online', 'Limited Seats'].map((label) => (
               <span key={label} className="inline-flex items-center text-purple-300 text-xs font-medium bg-white/5 border border-white/10 px-3 py-1.5 rounded-full whitespace-nowrap">
                 {label}
               </span>
@@ -206,7 +206,7 @@ export function CareerKickstartClient() {
                 </div>
 
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Your spot is saved!</h2>
-                <p className="text-purple-300 mb-6">Complete payment below to confirm your registration for April 22nd.</p>
+                <p className="text-purple-300 mb-6">Complete payment below to confirm your registration for April 22nd at 5p ET / 2p PT.</p>
 
                 {/* Zoom link promise */}
                 <div className="bg-purple-900/40 border border-purple-500/30 rounded-xl p-4 mb-4 text-left flex items-start gap-3">
@@ -224,7 +224,7 @@ export function CareerKickstartClient() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                   <p className="text-amber-200 text-sm leading-relaxed">
-                    <strong className="text-amber-100">Add April 22nd to your calendar now.</strong>
+                    <strong className="text-amber-100">Add April 22nd, 5p ET / 2p PT to your calendar now.</strong>
                   </p>
                 </div>
 
