@@ -60,7 +60,7 @@ export function NavBar() {
                 />
               </Link>
               <p className="text-[#4f2170] text-base font-semibold italic ml-3">
-                A Candidate So Rare, They&apos;re Almost Mythical
+                We find candidates so rare, they&apos;re almost mythical
               </p>
             </div>
           </div>
@@ -189,7 +189,7 @@ export function NavBar() {
                 className="h-auto w-auto mb-1"
               />
               <p className="text-[#4f2170] text-[10px] font-medium italic leading-tight">
-                A Candidate So Rare, They&apos;re Almost Mythical
+                We find candidates so rare, they&apos;re almost mythical
               </p>
             </Link>
 
