@@ -7,6 +7,7 @@ interface TeamMemberHighlightSectionProps {
   imageSrc: string;
   paragraphs: string[];
   bullets: string[];
+  className?: string;
 }
 
 export function TeamMemberHighlightSection({
@@ -15,9 +16,10 @@ export function TeamMemberHighlightSection({
   imageSrc,
   paragraphs,
   bullets,
+  className,
 }: TeamMemberHighlightSectionProps) {
   return (
-    <section className="py-20 bg-white">
+    <section className={`py-20 ${className ?? 'bg-white'}`}>
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Image */}

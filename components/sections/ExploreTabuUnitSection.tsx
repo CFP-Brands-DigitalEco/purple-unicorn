@@ -5,11 +5,11 @@ export function ExploreTabuUnitSection() {
     <section className="py-20 bg-white">
       <Container>
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#4f2170] mb-4">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#4f2170] mb-3">
             Explore our Talent Acquisition and HR Solutions
           </h2>
-          <p className="text-xl text-slate-700 max-w-3xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Embedded recruitment and HR that scale with your team, culture, and mission.
           </p>
         </div>

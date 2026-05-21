@@ -73,6 +73,14 @@ export function Footer() {
                     Testimonials
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/about"
+                    className="text-gray-300 hover:text-purple-400 transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
               </ul>
             </div>
 

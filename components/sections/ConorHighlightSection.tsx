@@ -27,7 +27,7 @@ export function ConorHighlightSection() {
                 Conor Boland
               </h2>
               <p className="text-xl text-slate-600 font-semibold">
-                Chief Talent Officer
+                Co-Founder / Chief Talent Officer
               </p>
             </div>
             <div className="space-y-4 text-slate-700 leading-relaxed">

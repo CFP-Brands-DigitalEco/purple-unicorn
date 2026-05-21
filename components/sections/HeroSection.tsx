@@ -35,7 +35,7 @@ export function HeroSection() {
             </p>
 
             <div className="pt-4">
-              <Button variant="primary" href="/b2b-services" className="text-base px-8 py-3">
+              <Button variant="primary" href="/services" className="text-base px-8 py-3">
                 <span className="uppercase tracking-wider">HIRE. GROW. RETAIN.</span>
               </Button>
             </div>

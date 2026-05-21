@@ -7,9 +7,9 @@ import { FounderSection } from '@/components/sections/FounderSection';
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
 
 export const metadata: Metadata = {
-  title: "Purple Unicorn | Full Cycle Talent Solutions - Career Coaching & HR Services",
-  description: "We support advancing organizations and professionals of all levels to reach their maximum potential for impact through career coaching, talent acquisition, and HR consulting.",
-  keywords: ["career coaching", "hr services", "hr consulting", "talent acquisition", "recruitment", "career development", "professional development"],
+  title: "Purple Unicorn | Embedded HR & Talent Acquisition",
+  description: "Culture-first HR consulting and embedded talent acquisition for growing organizations. Strategic people infrastructure, scalable hiring systems, and results that last.",
+  keywords: ["embedded HR", "embedded recruiting", "hr consulting", "talent acquisition", "people operations", "hr services", "recruitment"],
   alternates: {
     canonical: '/',
   },

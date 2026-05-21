@@ -31,7 +31,7 @@ export default function TalentAcquisitionPage() {
       <SeamlessIntegrationSection />
       <TeamMemberHighlightSection
         name="Melissa Rothschild"
-        title="Head of B2B Services, Purple Unicorn"
+        title="Chief Executive Officer, Purple Unicorn"
         imageSrc="/headshots/Melissa-headshot.webp"
         paragraphs={[
           "Melissa brings 20+ years of experience building and scaling dynamic teams across high-stakes industries. Before joining Purple Unicorn, she led executive recruitment and casting operations for four major television production companies – securing Emmy-winning talent and forging strategic partnerships with leading networks.",

@@ -77,19 +77,16 @@ export function NavBar() {
                   Home
                 </Link>
 
-                {/* Talent Acquisition */}
-                <Link href="/b2b-services/talent-acquisition" className={getNavItemClasses('/b2b-services/talent-acquisition')}>
-                  Talent Acquisition
-                </Link>
-
-                {/* HR Consultancy */}
-                <Link href="/b2b-services/hr-consultancy" className={getNavItemClasses('/b2b-services/hr-consultancy')}>
-                  HR Consultancy
-                </Link>
-
-                {/* Candidates */}
-                <Link href="/candidates" className={getNavItemClasses('/candidates')}>
-                  Candidates
+                {/* Services */}
+                <Link
+                  href="/services"
+                  className={`inline-flex items-center rounded-lg px-4 py-2 font-medium transition-all duration-200 ${
+                    isActive('/services') || isActive('/b2b-services')
+                      ? 'bg-white text-[#4f2170] font-semibold shadow-sm'
+                      : 'text-slate-700 hover:bg-white hover:text-[#4f2170]'
+                  }`}
+                >
+                  Services
                 </Link>
 
                 {/* Bootcamps */}
@@ -97,20 +94,25 @@ export function NavBar() {
                   Bootcamps
                 </Link>
 
-                {/* Testimonials */}
-                <Link href="/testimonials" className={getNavItemClasses('/testimonials')}>
-                  Testimonials
-                </Link>
-
-                {/* HOT JOBS! - External Link */}
+                {/* Careers - External Link */}
                 <a
                   href="https://purple-unicorn.breezy.hr/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center rounded-lg px-4 py-2 font-medium text-slate-700 hover:bg-white hover:text-[#4f2170] transition-all duration-200"
                 >
-                  HOT JOBS!
+                  Careers
                 </a>
+
+                {/* Testimonials */}
+                <Link href="/testimonials" className={getNavItemClasses('/testimonials')}>
+                  Testimonials
+                </Link>
+
+                {/* About Us */}
+                <Link href="/about" className={getNavItemClasses('/about')}>
+                  About Us
+                </Link>
 
                 {/* Sign In Dropdown */}
                 <div
@@ -225,37 +227,15 @@ export function NavBar() {
                   Home
                 </Link>
 
-                {/* Talent Acquisition */}
+                {/* Services */}
                 <Link
-                  href="/b2b-services/talent-acquisition"
+                  href="/services"
                   className={`${
-                    isActive('/b2b-services/talent-acquisition') ? 'bg-purple-100 text-purple-700 font-semibold' : 'text-gray-700'
+                    isActive('/services') || isActive('/b2b-services') ? 'bg-purple-100 text-purple-700 font-semibold' : 'text-gray-700'
                   } rounded-lg px-4 py-3 hover:bg-purple-50 hover:text-purple-600 transition-colors`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Talent Acquisition
-                </Link>
-
-                {/* HR Consultancy */}
-                <Link
-                  href="/b2b-services/hr-consultancy"
-                  className={`${
-                    isActive('/b2b-services/hr-consultancy') ? 'bg-purple-100 text-purple-700 font-semibold' : 'text-gray-700'
-                  } rounded-lg px-4 py-3 hover:bg-purple-50 hover:text-purple-600 transition-colors`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  HR Consultancy
-                </Link>
-
-                {/* Candidates */}
-                <Link
-                  href="/candidates"
-                  className={`${
-                    isActive('/candidates') ? 'bg-purple-100 text-purple-700 font-semibold' : 'text-gray-700'
-                  } rounded-lg px-4 py-3 hover:bg-purple-50 hover:text-purple-600 transition-colors`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Candidates
+                  Services
                 </Link>
 
                 {/* Bootcamps */}
@@ -269,6 +249,17 @@ export function NavBar() {
                   Bootcamps
                 </Link>
 
+                {/* Careers */}
+                <a
+                  href="https://purple-unicorn.breezy.hr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-700 rounded-lg px-4 py-3 hover:bg-purple-50 hover:text-purple-600 transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Careers
+                </a>
+
                 {/* Testimonials */}
                 <Link
                   href="/testimonials"
@@ -280,16 +271,16 @@ export function NavBar() {
                   Testimonials
                 </Link>
 
-                {/* HOT JOBS! */}
-                <a
-                  href="https://purple-unicorn.breezy.hr/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-700 rounded-lg px-4 py-3 hover:bg-purple-50 hover:text-purple-600 transition-colors"
+                {/* About Us */}
+                <Link
+                  href="/about"
+                  className={`${
+                    isActive('/about') ? 'bg-purple-100 text-purple-700 font-semibold' : 'text-gray-700'
+                  } rounded-lg px-4 py-3 hover:bg-purple-50 hover:text-purple-600 transition-colors`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  HOT JOBS!
-                </a>
+                  About Us
+                </Link>
 
                 {/* Sign In Accordion */}
                 <div>

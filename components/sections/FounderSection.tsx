@@ -10,8 +10,8 @@ export function FounderSection() {
           <div className="order-2 lg:order-1">
             <div className="rounded-lg overflow-hidden shadow-sm bg-slate-200">
               <Image
-                src="/headshots/Jenni-headshot.webp"
-                alt="Jenni Smith"
+                src="/headshots/Melissa-headshot.webp"
+                alt="Melissa Rothschild"
                 width={450}
                 height={550}
                 className="w-full h-auto"
@@ -23,24 +23,24 @@ export function FounderSection() {
           <div className="order-1 lg:order-2 space-y-6">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-[#4f2170] mb-2">
-                Jenni Smith
+                Melissa Rothschild
               </h2>
               <p className="text-xl text-slate-600 font-semibold">
-                Chief Executive Officer/Founder, Purple Unicorn
+                Chief Executive Officer, Purple Unicorn
               </p>
             </div>
 
             <div className="space-y-4 text-slate-800 text-lg leading-relaxed">
               <p>
-                Jenni is the architect behind hundreds of successful careers with 29+ years of experience leading talent development and acquisition at some of the world's most influential companies.
+                Melissa leads Purple Unicorn with a clear focus: building people infrastructure that scales and talent strategies that hold. With 20+ years across talent acquisition, operations, and organizational development, she brings the strategic depth and execution capability that modern organizations need in a people partner.
               </p>
 
               <p>
-                Her ability to translate decades of enterprise hiring insight into clear, actionable strategies is what truly sets her apart.
+                Before becoming CEO, Melissa served as Purple Unicorn&apos;s Head of Talent Acquisition and COO — building the embedded recruiting practice and client systems that define the firm today. Her work spans mission-driven nonprofits, growth-stage companies, and established organizations including Northwestern Mutual, Allstate, and Halfmoon Empanadas.
               </p>
 
               <p>
-                Whether you're a company looking to scale with the right people, or a professional ready to level up — Jenni built Purple Unicorn to be the partner that helps you do it.
+                Whether you&apos;re scaling a team, rebuilding a people function, or hiring for culture — Melissa built Purple Unicorn to be the embedded partner that helps you do it right.
               </p>
             </div>
 
@@ -48,28 +48,28 @@ export function FounderSection() {
               <div className="flex items-start gap-3">
                 <span className="text-[#4f2170] font-bold text-xl mt-1">✓</span>
                 <p className="text-slate-800">
-                  29+ years of talent leadership at top-tier Fortune 500 companies
+                  20+ years of experience in talent acquisition, people operations, and organizational development
                 </p>
               </div>
 
               <div className="flex items-start gap-3">
                 <span className="text-[#4f2170] font-bold text-xl mt-1">✓</span>
                 <p className="text-slate-800">
-                  Deep insight into how global hiring processes across all levels — from career launch to seasoned executive
+                  Builder of scalable hiring systems, embedded recruiting frameworks, and culture-first HR programs
                 </p>
               </div>
 
               <div className="flex items-start gap-3">
                 <span className="text-[#4f2170] font-bold text-xl mt-1">✓</span>
                 <p className="text-slate-800">
-                  Proven record of advancing and accelerating individuals and teams across diverse industries and regions
+                  Proven record across nonprofits, media, and high-growth organizations
                 </p>
               </div>
 
               <div className="flex items-start gap-3">
                 <span className="text-[#4f2170] font-bold text-xl mt-1">✓</span>
                 <p className="text-slate-800">
-                  Vast executive network and immersive expertise across today's challenging employment landscape
+                  Member of BNI, Television Academy, and Casting Society of America (CSA)
                 </p>
               </div>
             </div>
