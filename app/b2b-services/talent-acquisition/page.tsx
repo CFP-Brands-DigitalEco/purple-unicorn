@@ -24,7 +24,11 @@ export const metadata: Metadata = {
 export default function TalentAcquisitionPage() {
   return (
     <>
-      <TalentHeroSection />
+      <TalentHeroSection breadcrumb={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services' },
+        { label: 'Talent Acquisition' },
+      ]} />
       <ExploreTabuUnitSection />
       <ProvenMethodologySection />
       <PeopleOpsBenefitsSection />

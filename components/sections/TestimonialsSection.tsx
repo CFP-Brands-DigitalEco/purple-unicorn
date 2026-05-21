@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Container } from '../layout/Container';
 
 export function TestimonialsSection() {
@@ -38,6 +39,12 @@ export function TestimonialsSection() {
             <TestimonialCard key={index} testimonial={testimonial} />
           ))}
         </div>
+
+        <div className="text-center mt-10">
+          <Link href="/testimonials" className="inline-flex items-center gap-2 text-[#4f2170] font-semibold hover:text-[#3d1958] transition-colors">
+            Read all stories <span>→</span>
+          </Link>
+        </div>
       </Container>
     </section>
   );
@@ -55,7 +62,7 @@ function TestimonialCard({ testimonial }: { testimonial: { name: string; role: s
   return (
     <div className="bg-white rounded-lg p-8 border border-slate-200 shadow-sm flex flex-col">
       {/* Quote */}
-      <div className="mb-6 flex-grow">
+      <div className="mb-6 grow">
         <svg
           className="w-10 h-10 text-[#4f2170] opacity-30 mb-4"
           fill="currentColor"

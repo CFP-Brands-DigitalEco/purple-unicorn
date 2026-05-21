@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Container } from '../layout/Container';
 
 export function FounderSection() {
@@ -36,11 +37,7 @@ export function FounderSection() {
               </p>
 
               <p>
-                Before becoming CEO, Melissa served as Purple Unicorn&apos;s Head of Talent Acquisition and COO — building the embedded recruiting practice and client systems that define the firm today. Her work spans mission-driven nonprofits, growth-stage companies, and established organizations including Northwestern Mutual, Allstate, and Halfmoon Empanadas.
-              </p>
-
-              <p>
-                Whether you&apos;re scaling a team, rebuilding a people function, or hiring for culture — Melissa built Purple Unicorn to be the embedded partner that helps you do it right.
+                Her work spans mission-driven nonprofits, growth-stage companies, and established organizations including Northwestern Mutual, Allstate, and Halfmoon Empanadas — built on years as Purple Unicorn&apos;s Head of Talent Acquisition and COO before stepping into the CEO role.
               </p>
             </div>
 
@@ -73,6 +70,10 @@ export function FounderSection() {
                 </p>
               </div>
             </div>
+
+            <Link href="/about" className="inline-flex items-center gap-2 text-[#4f2170] font-semibold hover:text-[#3d1958] transition-colors">
+              Meet our team <span>→</span>
+            </Link>
           </div>
         </div>
       </Container>

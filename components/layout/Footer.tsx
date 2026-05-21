@@ -41,7 +41,7 @@ export function Footer() {
                 className="h-auto w-auto"
               />
               <p className="text-gray-300 text-sm leading-relaxed">
-                Where exceptional talent meets strategic growth.
+                We find candidates so rare, they&apos;re almost mythical.
               </p>
             </div>
 

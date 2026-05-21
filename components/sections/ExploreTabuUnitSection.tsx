@@ -1,19 +1,15 @@
+import Link from 'next/link';
 import { Container } from '../layout/Container';
 
-export function ExploreTabuUnitSection() {
+interface ExploreTabuUnitSectionProps {
+  taHref?: string;
+  hrHref?: string;
+}
+
+export function ExploreTabuUnitSection({ taHref, hrHref }: ExploreTabuUnitSectionProps = {}) {
   return (
     <section className="py-20 bg-white">
       <Container>
-        {/* Header */}
-        <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#4f2170] mb-3">
-            Explore our Talent Acquisition and HR Solutions
-          </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Embedded recruitment and HR that scale with your team, culture, and mission.
-          </p>
-        </div>
-
         {/* Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Talent Acquisition Card */}
@@ -25,7 +21,7 @@ export function ExploreTabuUnitSection() {
               </div>
               <div>
                 <h3 className="font-bold text-lg text-slate-900 leading-tight">
-                  Talent Acquisition Solutions
+                  Talent Acquisition
                 </h3>
                 <p className="text-sm text-[#4f2170] font-semibold mt-1">
                   Embedded Recruitment for High-Growth Teams
@@ -39,7 +35,7 @@ export function ExploreTabuUnitSection() {
             </p>
 
             {/* Features List */}
-            <ul className="space-y-3 flex-grow">
+            <ul className="space-y-3 grow">
               <li className="flex items-start gap-2 text-sm text-slate-800">
                 <span className="text-green-600 font-bold flex-shrink-0">✔</span>
                 <span>Embedded recruiters that act as internal partners</span>
@@ -61,6 +57,17 @@ export function ExploreTabuUnitSection() {
                 <span>Advisory on hiring strategy, equity, and process</span>
               </li>
             </ul>
+
+            {taHref && (
+              <div className="mt-6 pt-6 border-t border-slate-100">
+                <Link
+                  href={taHref}
+                  className="inline-flex items-center gap-2 text-[#4f2170] font-semibold hover:text-[#3d1958] transition-colors text-sm"
+                >
+                  Explore Talent Acquisition <span>→</span>
+                </Link>
+              </div>
+            )}
           </div>
 
           {/* HR Solutions Card */}
@@ -72,7 +79,7 @@ export function ExploreTabuUnitSection() {
               </div>
               <div>
                 <h3 className="font-bold text-lg text-slate-900 leading-tight">
-                  HR Solutions
+                  HR Consultancy
                 </h3>
                 <p className="text-sm text-[#7e22ce] font-semibold mt-1">
                   On-Demand HR Built for Scale
@@ -86,7 +93,7 @@ export function ExploreTabuUnitSection() {
             </p>
 
             {/* Features List */}
-            <ul className="space-y-3 flex-grow">
+            <ul className="space-y-3 grow">
               <li className="flex items-start gap-2 text-sm text-slate-800">
                 <span className="text-green-600 font-bold flex-shrink-0">✔</span>
                 <span>Embedded fractional HR team</span>
@@ -108,6 +115,17 @@ export function ExploreTabuUnitSection() {
                 <span>Conflict resolution & employee relations</span>
               </li>
             </ul>
+
+            {hrHref && (
+              <div className="mt-6 pt-6 border-t border-slate-100">
+                <Link
+                  href={hrHref}
+                  className="inline-flex items-center gap-2 text-[#4f2170] font-semibold hover:text-[#3d1958] transition-colors text-sm"
+                >
+                  Explore HR Consultancy <span>→</span>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </Container>

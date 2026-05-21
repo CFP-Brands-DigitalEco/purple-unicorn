@@ -1,10 +1,38 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '../ui/Button';
 
-export function TalentHeroSection() {
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface TalentHeroSectionProps {
+  breadcrumb?: BreadcrumbItem[];
+}
+
+export function TalentHeroSection({ breadcrumb }: TalentHeroSectionProps = {}) {
   return (
     <section className="bg-[#f7f3ff]">
-      <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
+      {breadcrumb && (
+        <div className="mx-auto max-w-6xl px-4 pt-4 pb-0">
+          <ol className="flex items-center gap-2 text-sm text-slate-500">
+            {breadcrumb.map((item, index) => (
+              <li key={index} className="flex items-center gap-2">
+                {index > 0 && <span className="text-slate-300">/</span>}
+                {item.href ? (
+                  <Link href={item.href} className="hover:text-[#4f2170] transition-colors">
+                    {item.label}
+                  </Link>
+                ) : (
+                  <span className="text-slate-800 font-medium">{item.label}</span>
+                )}
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
+      <div className="mx-auto max-w-6xl px-4 py-10 lg:py-12">
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,0.9fr)]">
           {/* Text Content */}
           <div className="space-y-6 max-w-2xl">
